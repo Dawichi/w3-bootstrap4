@@ -13,6 +13,14 @@
 11. [Badges](#11. Badges)
 12. [Progress Bar](#12. Progress Bar)
 13. [Spinners](#13. Spinners)
+14. [Pagination](#14. Pagination)
+15. [List Groups](#15. List Groups)
+16. [Cards](#16. Cards)
+17. [Dropdowns](#17. Dropdowns)
+
+
+
+
 
 
 ## 1. Containers
@@ -832,6 +840,726 @@ Progress bars can also be stacked:
 
 
 ## 13. Spinners
+
+To create a spinner/loader, use the `.spinner-border` class:       ![spin](./imgs/28.png)
+
+```html
+<div class="spinner-border"></div>
+```
+
+
+
+#### Colored Spinners
+
+Use any **text color utilites** to add a color to the spinner:
+
+![spincolored](./imgs/29.png)
+
+```html
+<div class="spinner-border text-muted"></div>
+<div class="spinner-border text-primary"></div>
+<div class="spinner-border text-success"></div>
+<div class="spinner-border text-info"></div>
+<div class="spinner-border text-warning"></div>
+<div class="spinner-border text-danger"></div>
+<div class="spinner-border text-secondary"></div>
+<div class="spinner-border text-dark"></div>
+<div class="spinner-border text-light"></div>
+```
+
+
+
+#### Growing Spinners
+
+Use the `.spinner-grow` class if you want the spinner/loader to grow instead:
+
+![spingrow](./imgs/30.png)
+
+```html
+<div class="spinner-grow text-muted"></div>
+<div class="spinner-grow text-primary"></div>
+<div class="spinner-grow text-success"></div>
+<div class="spinner-grow text-info"></div>
+<div class="spinner-grow text-warning"></div>
+<div class="spinner-grow text-danger"></div>
+<div class="spinner-grow text-secondary"></div>
+<div class="spinner-grow text-dark"></div>
+<div class="spinner-grow text-light"></div>
+```
+
+
+
+#### Spinner Size
+
+Use `.spinner-border-sm` or `.spinner-grow-sm` for a smaller spinner:  ![spinsize](./imgs/31.png)
+
+```html
+<div class="spinner-border spinner-border-sm"></div>
+<div class="spinner-grow spinner-grow-sm"></div>
+```
+
+
+
+#### Spinner Buttons
+
+You can also add spinners to a button, with or without text:
+
+![spinbuton](./imgs/32.png)
+
+````html
+<button class="btn btn-primary">
+	<span class="spinner-border spinner-border-sm"></span>
+</button>
+
+<button class="btn btn-primary">
+  	<span class="spinner-border spinner-border-sm"></span> Loading..
+</button>
+
+<button class="btn btn-primary" disabled>
+  	<span class="spinner-border spinner-border-sm"></span> Loading..
+</button>
+
+<button class="btn btn-primary" disabled>
+      <span class="spinner-grow spinner-grow-sm"></span> Loading..
+</button>
+````
+
+
+
+## 14. Pagination
+
+For a multi-page web sites, you can add some sort of pagination.
+
+![pag](./imgs/33.png)
+
+For basic pagination, add `.pagination` class to an `<ul>` element. Then add the `.page-item` to each `<li>` and a `.page-link` class to each `<a>` inside `<li>`:
+
+````html
+<ul class="pagination">
+   <li class="page-item"><a class="page-link" href="#">Pre</a></li>
+   <li class="page-item"><a class="page-link" href="#">1</a></li>
+   <li class="page-item"><a class="page-link" href="#">2</a></li>
+   <li class="page-item"><a class="page-link" href="#">3</a></li>
+   <li class="page-item"><a class="page-link" href="#">Next</a></li>
+</ul>
+````
+
+
+
+#### Active State
+
+The `.active` class is used to "highlight" the current page:
+
+![pageact](./imgs/34.png)
+
+````html
+<ul class="pagination">
+   <li class="page-item"><a class="page-link" href="#">Pre</a></li>
+   <li class="page-item"><a class="page-link" href="#">1</a></li>
+   <li class="page-item active"><a class="page-link" href="#">2</a>    </li>
+   <li class="page-item"><a class="page-link" href="#">3</a></li>
+   <li class="page-item"><a class="page-link" href="#">Next</a></li>
+</ul>
+````
+
+
+
+#### Disabled State
+
+The `.disabled` class is used for un-clickable links:
+
+![pagedisabled](./imgs/35.png)
+
+````html
+<ul class="pagination">
+   <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+   <li class="page-item"><a class="page-link" href="#">1</a></li>
+   <li class="page-item"><a class="page-link" href="#">2</a></li>
+   <li class="page-item"><a class="page-link" href="#">3</a></li>
+   <li class="page-item"><a class="page-link" href="#">Next</a></li>
+</ul>
+````
+
+
+
+#### Pagination Sizing
+
+Pagination blocks can also be sized to a larger or a smaller size. Add class `.pagination-lg` for larger blocks or `.pagination-sm` for smaller blocks:
+
+![pagesize](./imgs/36.png)
+
+````html
+<ul class="pagination pagination-lg">
+  <li class="page-item"><a class="page-link" href="#">Pre</a></li>
+  <li class="page-item"><a class="page-link" href="#">1</a></li>
+  <li class="page-item"><a class="page-link" href="#">2</a></li>
+  <li class="page-item"><a class="page-link" href="#">3</a></li>
+  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+</ul>
+
+<ul class="pagination pagination-sm">
+  <li class="page-item"><a class="page-link" href="#">Pre</a></li>
+  <li class="page-item"><a class="page-link" href="#">1</a></li>
+  <li class="page-item"><a class="page-link" href="#">2</a></li>
+  <li class="page-item"><a class="page-link" href="#">3</a></li>
+  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+</ul>
+````
+
+
+
+#### Pagination Alignment
+
+Use utility classes to change the alignment of the pagination:
+
+![pagealign](./imgs/37.png)
+
+````html
+<!-- Default (left-aligned) -->
+<ul class="pagination" style="margin:20px 0">
+  	<li class="page-item">...</li>
+</ul>
+
+<!-- Center-aligned -->
+<ul class="pagination justify-content-center" style="margin:20px 0">
+  	<li class="page-item">...</li>
+</ul>
+
+<!-- Right-aligned -->
+<ul class="pagination justify-content-end" style="margin:20px 0">
+  	<li class="page-item">...</li>
+</ul>
+````
+
+> **Tip:** Read more about Bootstrap 4 Utility/Helper classes in our [BS4 Utilities](https://www.w3schools.com/bootstrap4/bootstrap_utilities.asp).
+
+
+
+#### Breadcrumbs
+
+Another form for pagination, is breadcrumbs. 
+
+![breadcrumbs](./imgs/38.png)
+
+The `.breadcrumb` and `.breadcrumb-item` classes indicates the current page's location within a navigational hierarchy:
+
+````html
+<ul class="breadcrumb">
+  	<li class="breadcrumb-item"><a href="#">Photos</a></li>
+  	<li class="breadcrumb-item"><a href="#">Summer 2017</a></li>
+  	<li class="breadcrumb-item"><a href="#">Italy</a></li>
+  	<li class="breadcrumb-item active">Rome</li>
+</ul>
+````
+
+
+
+## 15. List Groups
+
+The basic list group is an unordered list with items. To create a list group, use an `<ul>` element with class `.list-group`, and `<li>` with `.list-group-item`:
+
+![listgrp](./imgs/39-bug.png)
+
+````html
+<ul class="list-group">
+  	<li class="list-group-item">First item</li>
+  	<li class="list-group-item">Second item</li>
+  	<li class="list-group-item">Third item</li>
+</ul>
+````
+
+
+
+#### Active State
+
+Use the `.active` class to highlight the current item:
+
+![lacti](./imgs/40.png)
+
+```html
+<ul class="list-group">
+  	<li class="list-group-item active">Active item</li>
+  	<li class="list-group-item">Second item</li>
+ 	 <li class="list-group-item">Third item</li>
+</ul>
+```
+
+
+
+#### List Group w/ Linked Items
+
+To create a list group with linked items, use `<div>` instead of `<ul>` and `<a>` instead of `<li>`. Optionally, add the `.list-group-item-action` class if you want a grey background color on hover:
+
+```html
+<div class="list-group">
+  <a href="#" class="list-group-item list-group-item-action">1</a>
+  <a href="#" class="list-group-item list-group-item-action">2</a>
+  <a href="#" class="list-group-item list-group-item-action">3</a>
+</div>
+```
+
+
+
+#### Disabled Item
+
+The `.disabled` class adds a lighter text color to the disabled item. And when used on links, it will remove the hover effect:
+
+![disableditem](./imgs/41.png)
+
+```html
+<div class="list-group">
+  <a href="#" class="list-group-item disabled">Disabled item</a>
+  <a href="#" class="list-group-item disabled">Disabled item</a>
+  <a href="#" class="list-group-item">Third item</a>
+</div>
+```
+
+
+
+#### Flush / Remove Borders
+
+The `.list-group-flush` class removes some borders and rounds corners:
+
+```html
+<ul class="list-group list-group-flush">
+	<li class="list-group-item">First item</li>
+  	<li class="list-group-item">Second item</li>
+  	<li class="list-group-item">Third item</li>
+</ul>
+```
+
+
+
+#### Horizontal List Groups
+
+To display the list items horizontally instead of vertically, add `.list-group-horizontal` class to `.list-group`:
+
+![horizontal](./imgs/42.png)
+
+```html
+<ul class="list-group list-group-horizontal">
+  	<li class="list-group-item">First item</li>
+  	<li class="list-group-item">Second item</li>
+  	<li class="list-group-item">Third item</li>
+</ul>
+```
+
+
+
+#### Contextual Classes
+
+Contextual classes can be used to color list items:
+
+![coloreditems](./imgs/43.png)
+
+```html
+<ul class="list-group">
+  <li class="list-group-item list-group-item-success">Success</li>
+  <li class="list-group-item list-group-item-secondary">Second</li>
+  <li class="list-group-item list-group-item-info">Info</li>
+  <li class="list-group-item list-group-item-warning">Warning</li>
+  <li class="list-group-item list-group-item-danger">Danger</li>
+  <li class="list-group-item list-group-item-primary">Primary</li>
+  <li class="list-group-item list-group-item-dark">Dark</li>
+  <li class="list-group-item list-group-item-light">Light</li>
+</ul>
+```
+
+
+
+#### Link Items w/ Contextual Classes
+
+```html
+<div class="list-group">
+  <a href="#" class="list-group-item list-group-item-action">Action item</a>
+  <a href="#" class="list-group-item list-group-item-action list-group-item-success">Success item</a>
+  <a href="#" class="list-group-item list-group-item-action list-group-item-secondary">Secondary item</a>
+  <a href="#" class="list-group-item list-group-item-action list-group-item-info">Info item</a>
+  <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Warning item</a>
+  <a href="#" class="list-group-item list-group-item-action list-group-item-danger">Danger item</a>
+  <a href="#" class="list-group-item list-group-item-action list-group-item-primary">Primary item</a>
+  <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Dark item</a>
+  <a href="#" class="list-group-item list-group-item-action list-group-item-light">Light item</a>
+</div>
+```
+
+
+
+#### List Group w/ Badges
+
+Combine `.badge` classes with utility classes to add badges inside the list group:
+
+![lgbadges](./imgs/44.png)
+
+```html
+<ul class="list-group">
+  	<li class="list-group-item d-flex justify-content-between align-items-center">
+    	Inbox
+    	<span class="badge badge-primary badge-pill">12</span>
+  	</li>
+  	<li class="list-group-item d-flex justify-content-between align-items-center">
+    	Ads
+    	<span class="badge badge-primary badge-pill">50</span>
+  	</li>
+  	<li class="list-group-item d-flex justify-content-between align-items-center">
+    	Junk
+    	<span class="badge badge-primary badge-pill">99</span>
+  	</li>
+</ul>
+```
+
+
+
+## 16. Cards
+<div><p style="width: 60%; float: left">A card in Bootstrap 4 is a bordered box with some padding around its content. It includes options for headers, footers, content, colors, etc.</p>
+<img src="./imgs/45.png" alt="card" style="float: right; zoom: 67%;" />
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#### Basic card
+
+A basic card is created with `.card` class, content inside has a `.card-body`:
+
+![bcard](./imgs/46.png)
+
+```` html
+<div class="card"> <div class="card-body">Basic card</div> </div>
+````
+
+
+
+#### Header and Footer
+
+The `.card-header` class adds a heading to the card and the `.card-footer` class adds a footer to the card:
+
+![haf](./imgs/47.png)
+
+```html
+<div class="card">
+  	<div class="card-header">Header</div>
+  	<div class="card-body">Content</div>
+  	<div class="card-footer">Footer</div>
+</div>
+```
+
+
+
+#### Contextual Cards
+
+To add a background color the card, use `.bg-primary`, `.bg-success`, `.bg-info`, `.bg-warning`, `.bg-danger`, `.bg-secondary`, `.bg-dark` and `.bg-light`.
+
+
+
+#### Tiles, Text and Links
+
+Use `.card-title` to add card titles to any heading element. The `.card-text` class is used to remove bottom margins for a `<p>` element if it is the last child (or the only one) inside `.card-body`. The `.card-link` class adds a blue color to any link, and a hover effect.
+
+![titletextlink](./imgs/48.png)
+
+```html
+<div class="card">
+  	<div class="card-body">
+    	<h4 class="card-title">Card title</h4>
+    	<p class="card-text">Some example text.</p>
+    	<a href="#" class="card-link">Card link</a>
+    	<a href="#" class="card-link">Another link</a>
+  	</div>
+</div>
+```
+
+
+
+#### Card Images
+
+Add `.card-img-top` or `.card-img-bottom` to an `<img>` to place the image at the top or at the bottom inside the card. Note that we have added the image outside of the `.card-body` to span the entire width:
+
+![cardimg](./imgs/49.png)
+
+```html
+<div class="card" style="width:400px">
+  	<img class="card-img-top" src="im1.png" alt="Card image">
+  	<div class="card-body">
+    	<h4 class="card-title">John Doe</h4>
+    	<p class="card-text">Some example text.</p>
+    	<a href="#" class="btn btn-primary">See Profile</a>
+ 	 </div>
+</div>
+```
+
+
+
+#### Stretched Link
+
+Add the `.stretched-link` class to a link inside the card, and it will make the whole card clickable and hoverable (the card will act as a link):
+
+```html
+<a href="#" class="btn btn-primary stretched-link">See Profile</a>
+```
+
+
+
+#### Card Image Overlays
+
+<div><p style="width: 60%; float: left">Turn an image into a card background and use <code>.card-img-overlay</code> to add text on top of the image:</p>
+<img src="./imgs/50.png" alt="card" style="float: right; zoom: 45%;" />
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+```html
+<div class="card" style="width:500px">
+  	<img class="card-img-top" src="img1.png" alt="Card image">
+  	<div class="card-img-overlay">
+    	<h4 class="card-title">John Doe</h4>
+    	<p class="card-text">Some example text.</p>
+    	<a href="#" class="btn btn-primary">See Profile</a>
+ 	 </div>
+</div>
+```
+
+
+
+#### Card Columns
+
+The `.card-columns` class creates a masonry-like grid of cards (like pinterest). The layout will automatically adjust as you insert more cards.
+
+> **Note:** The cards are displayed vertically on small screens ( < 576px )
+
+<img src="./imgs/51.png" alt="cardcol" style="zoom:67%;" />
+
+```html
+<div class="card-columns">
+  <div class="card bg-primary">
+    <div class="card-body text-center">
+      <p class="card-text">Some text inside the first card</p>
+    </div>
+  </div>
+  <div class="card bg-warning">
+    <div class="card-body text-center">
+      <p class="card-text">Some text inside the second card</p>
+    </div>
+  </div>
+  <div class="card bg-success">
+    <div class="card-body text-center">
+      <p class="card-text">Some text inside the third card</p>
+    </div>
+  </div>
+  <div class="card bg-danger">
+    <div class="card-body text-center">
+      <p class="card-text">Some text inside the fourth card</p>
+    </div>
+  </div>
+  <div class="card bg-light">
+    <div class="card-body text-center">
+      <p class="card-text">Some text inside the fifth card</p>
+    </div>
+  </div>
+  <div class="card bg-info">
+    <div class="card-body text-center">
+      <p class="card-text">Some text inside the sixth card</p>
+    </div>
+  </div>
+</div>
+```
+
+
+
+#### Card Deck
+
+The `.card-deck` class creates a grid of cards that are of **equal height and width**. The layout will automatically adjust as you insert more cards.
+
+> **Note:** The cards are displayed vertically on small screens ( < 576px ).
+
+<img src="./imgs/52.png" alt="carddeck" style="zoom:67%;" />
+
+```html
+<div class="card-deck">
+  <div class="card bg-primary">
+    <div class="card-body text-center">
+      <p class="card-text">Some text inside the first card</p>
+    </div>
+  </div>
+  <div class="card bg-warning">
+    <div class="card-body text-center">
+      <p class="card-text">Some text inside the second card</p>
+    </div>
+  </div>
+  <div class="card bg-success">
+    <div class="card-body text-center">
+      <p class="card-text">Some text inside the third card</p>
+    </div>
+  </div>
+  <div class="card bg-danger">
+    <div class="card-body text-center">
+      <p class="card-text">Some text inside the fourth card</p>
+    </div>
+  </div>
+</div>
+```
+
+
+
+#### Card Group
+
+The `.card-group` class is similar to `.card-deck`. The only difference is that the `.card-group` class removes left and right margins between each card.
+
+>  **Note:** The cards are displayed vertically on small screens ( < 576px ), **WITH** top and bottom margin:
+
+<img src="./imgs/53.png" alt="cardgrp" style="zoom:67%;" />
+
+```html
+<div class="card-group">
+  <div class="card bg-primary">
+    <div class="card-body text-center">
+      <p class="card-text">Some text inside the first card</p>
+    </div>
+  </div>
+  <div class="card bg-warning">
+    <div class="card-body text-center">
+      <p class="card-text">Some text inside the second card</p>
+    </div>
+  </div>
+  <div class="card bg-success">
+    <div class="card-body text-center">
+      <p class="card-text">Some text inside the third card</p>
+    </div>
+  </div>
+  <div class="card bg-danger">
+    <div class="card-body text-center">
+      <p class="card-text">Some text inside the fourth card</p>
+    </div>
+  </div>
+</div>
+```
+
+
+
+## 17. Dropdowns
+
+<div><p style="width: 60%; float: left">A dropdown is a toggleable menu that allows the user to choose one value from a predefined list:</p>
+<img src="./imgs/54.png" alt="card" style="float: right; zoom: 80%;" />
+</div>
+
+
+
+
+
+
+
+```html
+<div class="dropdown">
+	<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Dropdown button</button>
+  	<div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Link 1</a>
+    	<a class="dropdown-item" href="#">Link 2</a>
+    	<a class="dropdown-item" href="#">Link 3</a>
+  	</div>
+</div>
+```
+
+**Example explained:** The `.dropdown` class indicates a dropdown menu. To open the dropdown menu, use a button or a link with a class of `.dropdown-toggle` and the `data-toggle="dropdown"` attribute.
+
+Add the `.dropdown-menu` class to a `<div>` element to build the dropdown. Then add the `.dropdown-item` class to each element (`<a>` or `<button>`) inside it.
+
+
+
+#### Dropdown Divider
+
+The `.dropdown-divider` class is used to separate links inside the dropdown menu with a thin horizontal border:
+
+<img src="./imgs/55.png" alt="dddivider" style="zoom: 80%;" />
+
+```html
+<div class="dropdown-divider"> </div>
+```
+
+
+
+#### Dropdown Header
+
+The `.dropdown-header` class is used to add headers inside the dropdown:
+
+<img src="./imgs/56.png" alt="ddh" style="zoom:80%;" />
+
+```html
+<div class="dropdown-header">Dropdown header 1</div>
+```
+
+
+
+#### Disabled and Active items
+
+Highlight a specific dropdown item with the `.active` class. To disable an item in the dropdown menu, use the `.disabled` class.
+
+<img src="./imgs/57.png" alt="disabledactivedd" style="zoom:80%;" />
+
+```html
+<a class="dropdown-item active" href="#">Active</a>
+<a class="dropdown-item disabled" href="#">Disabled</a>
+```
+
+
+
+#### Dropdown Position
+
+You can also create a "dropright" or "dropleft" menu, by adding the `.dropright` or `.dropleft` class to the dropdown. Note that the arrow is added automatically:
+
+<div>
+<img src="./imgs/58.png" alt="58" style="zoom:80%; float:left" />
+<img src="./imgs/59.png" alt="59" style="zoom:80%; float:right" />
+</div>
+
+
+
+
+
+````html
+<div class="dropdown dropright"></div>
+<div class="dropdown dropleft"></div>
+````
+
+
+
+#### Dropdown Menu Right
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
