@@ -2,4 +2,12 @@
 Summary of the Bootstrap 4 course from w3schools
 Link to the original course: https://www.w3schools.com/bootstrap4/
 
-This is a summary of all then content of the course on a single markdown archive, for personal use when necessary check some bootstrap classes.
+It is a summary of all then content of the course on a single markdown archive, for personal use when I need check some bootstrap classes.
+
+---
+
+This file was generated with my favourite markdown editor: [Typora](https://typora.io/).
+
+In case something was wrong, could be because of the editor. Opening it with Typora should works perfectly, and then you can generate a PDF or whatever you want to do with the content. 
+
+I hope this can help you studying Bootstrap4 or that it will be as useful as me to consult quick questions about it. Cheers <3
