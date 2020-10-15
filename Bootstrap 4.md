@@ -17,6 +17,11 @@
 15. [List Groups](#15. List Groups)
 16. [Cards](#16. Cards)
 17. [Dropdowns](#17. Dropdowns)
+18. [Collapse](#18. Collapse)
+19. [Nav Menus](#19. Nav Menus)
+20. [Navigation Bars](#20. Navigation Bars)
+21. [Forms](#21. Forms)
+22. [Inputs](#22. Inputs)
 
 
 
@@ -1547,8 +1552,1034 @@ You can also create a "dropright" or "dropleft" menu, by adding the `.dropright`
 
 #### Dropdown Menu Right
 
+To right-align the dropdown menu, add the `.dropdown-menu-right` class:
+
+```html
+<div class="dropdown-menu dropdown-menu-right">
+```
 
 
+
+#### Dropup
+
+If you want the dropdown menu to expand upwards instead of downwards, change the `<div>` element with `class="dropdown"` to `"dropup"`:
+
+````html
+<div class="dropup">
+````
+
+
+
+#### Dropdown Text
+
+The `.dropdown-item-text` class is used to add plain text to a dropdown item, or used on links for default link styling.
+
+````html
+<div class="dropdown-menu">
+  <a class="dropdown-item" href="#">Link 1</a>
+  <a class="dropdown-item" href="#">Link 2</a>
+  <a class="dropdown-item-text" href="#">Text Link</a>
+  <span class="dropdown-item-text">Just Text</span>
+</div>
+````
+
+
+
+#### Grouped Buttons w/ a Dropdown
+
+```html
+<div class="btn-group">
+  	<button type="button" class="btn btn-primary">Apple</button>
+  	<button type="button" class="btn btn-primary">Samsung</button>
+  	<div class="btn-group">
+    	<button type="button" 
+                class="btn btn-primary dropdown-toggle" 
+                data-toggle="dropdown">Sony
+        </button>
+        <div class="dropdown-menu">
+      		<a class="dropdown-item" href="#">Tablet</a>
+      		<a class="dropdown-item" href="#">Smartphone</a>
+    	</div>
+  	</div>
+</div>
+```
+
+
+
+#### Split Button Dropdowns
+
+![splitbtndd](./imgs/60.png)
+
+```html
+<div class="btn-group">
+  	<button type="button" class="btn btn-primary">Primary</button>
+  	<button type="button" class="btn btn-primary dropdown-toggle 		dropdown-toggle-split" data-toggle="dropdown">
+  	</button>
+  	<div class="dropdown-menu">
+    	<a class="dropdown-item" href="#">Link 1</a>
+    	<a class="dropdown-item" href="#">Link 2</a>
+  	</div>
+</div>
+```
+
+
+
+#### Vertical Button Group w/ Dropdown
+
+```html
+<div class="btn-group-vertical">
+  	<button type="button" class="btn btn-primary">Apple</button>
+  	<button type="button" class="btn btn-primary">Samsung</button>
+  	<div class="btn-group">
+    	<button type="button" 
+                class="btn btn-primary dropdown-toggle" 
+                data-toggle="dropdown">Sony</button>
+    	<div class="dropdown-menu">
+      		<a class="dropdown-item" href="#">Tablet</a>
+      		<a class="dropdown-item" href="#">Smartphone</a>
+    	</div>
+  	</div>
+</div>
+```
+
+
+
+> More info on [Bootstrap 4 JS Dropdown Reference](https://www.w3schools.com/bootstrap4/bootstrap_ref_js_dropdown.asp).
+
+
+
+
+
+## 18. Collapse
+
+Collapsibles allow you to hide and show large amount of content.
+
+```html
+<button data-toggle="collapse" data-target="#demo"> Collapsible </button>
+<div id="demo" class="collapse"> Lorem ipsum </div>
+```
+
+The `.collapse` class indicates a collapsible element (a `<div>` in our example); this is the content that will be shown or hidden with a click of a button.
+
+To control (show/hide) the collapsible content, add the `data-toggle="collapse"` attribute to an `<a>` or a `<button>` element. Then add the `data-target="#id"` attribute to connect the button with the collapsible content (`<div id="demo">`).
+
+>  **Note:** For `<a>`, you can use the `href` attrib instead of the `data-target`.
+
+```html
+<a href="#demo" data-toggle="collapse"> Collapsible </a>
+<div id="demo" class="collapse"> Lorem ipsum </div>
+```
+
+By default, the collapsible content is hidden. However, you can add the `.show` class to show the content by default:
+
+```html
+<div id="demo" class="collapse show"> Lorem ipsum </div>
+```
+
+
+
+#### Accordion
+
+The example shows a simple accordion by extending the card component.
+
+> **Note:** Use the `data-parent` attribute to make sure that all collapsible elements under the specified parent will be closed when one of the collapsible item is shown.
+
+```html
+<div id="accordion">
+  	<div class="card">
+    	<div class="card-header">
+      		<a class="card-link" data-toggle="collapse" 
+               href="#group1"> Collapsible Group #1 </a>
+        </div>
+    	<div id="group1" class="collapse show" 
+             data-parent="#accordion">
+      		<div class="card-body"> Text 1... </div>
+    	</div>
+  	</div>
+
+  	<div class="card">
+    	<div class="card-header">
+      		<a class="collapsed card-link" data-toggle="collapse" 
+               href="#group2"> Collapsible Group #2 </a>
+    	</div>
+    	<div id="group2" class="collapse" 
+             data-parent="#accordion">
+      		<div class="card-body"> Text 2... </div>
+    	</div>
+  	</div>
+
+  	<div class="card">
+    	<div class="card-header">
+      		<a class="collapsed card-link" data-toggle="collapse" 
+               href="#group3"> Collapsible Group #3 </a>
+    	</div>
+    	<div id="group3" class="collapse" data-parent="#accordion">
+      		<div class="card-body"> Text 3... </div>
+    	</div>
+  	</div>
+</div>
+```
+
+
+
+## 19. Nav Menus
+
+To create a simple horizontal menu, add the `.nav` class to a `<ul>` element, followed by `.nav-item` for each `<li>` and add the `.nav-link` class to their links:
+
+```html
+<ul class="nav">
+  	<li class="nav-item">
+    	<a class="nav-link" href="#">Link</a>
+  	</li>
+  	<li class="nav-item">
+    	<a class="nav-link" href="#">Link</a>
+  	</li>
+  	<li class="nav-item">
+    	<a class="nav-link" href="#">Link</a>
+ 	</li>
+  	<li class="nav-item">
+    	<a class="nav-link disabled" href="#">Disabled</a>
+  	</li>
+</ul>
+```
+
+
+
+#### Aligned Nav
+
+Add the `.justify-content-center` class to center the nav, and the `.justify-content-end` class to right-align the nav.
+
+```html
+<!-- Centered nav -->
+<ul class="nav justify-content-center">
+<!-- Right-aligned nav -->
+<ul class="nav justify-content-end">
+```
+
+
+
+
+
+#### Vertical Nav
+
+Add the `.flex-column` class to create a vertical nav.
+
+```html
+<ul class="nav flex-column">
+```
+
+
+
+#### Tabs
+
+Turn the nav menu into navigation tabs with the `.nav-tabs` class. Add the `.active` class to the active/current link. If you want the tabs to be togglable, see the last example on this page.
+
+```html
+<ul class="nav nav-tabs">
+  	<li class="nav-item">
+    	<a class="nav-link active" href="#">Active</a>
+  	</li>
+  	<li class="nav-item">
+    	<a class="nav-link" href="#">Link</a>
+  	</li>
+  	<li class="nav-item">
+    	<a class="nav-link" href="#">Link</a>
+  	</li>
+  	<li class="nav-item">
+    	<a class="nav-link disabled" href="#">Disabled</a>
+  	</li>
+</ul>
+```
+
+
+
+#### Pills
+
+Turn the nav menu into navigation pills with the `.nav-pills` class. If you want the pills to be togglable, see the last example on this page.
+
+```html
+<ul class="nav nav-pills">
+  	<li class="nav-item">
+    	<a class="nav-link active" href="#">Active</a>
+  	</li>
+  	<li class="nav-item">
+    	<a class="nav-link" href="#">Link</a>
+  	</li>
+  	<li class="nav-item">
+    	<a class="nav-link" href="#">Link</a>
+  	</li>
+  	<li class="nav-item">
+    	<a class="nav-link disabled" href="#">Disabled</a>
+  	</li>
+</ul>
+```
+
+
+
+#### Justified Tabs/Pills
+
+Justify the tabs/pills with the `.nav-justified` class (equal width):
+
+```html
+<ul class="nav nav-pills nav-justified">...</ul>
+<ul class="nav nav-tabs nav-justified">...</ul>
+```
+
+
+
+#### Pills w/ Dropdown
+
+```html
+<ul class="nav nav-pills">
+   <li class="nav-item">
+     <a class="nav-link active" href="#">Active</a>
+   </li>
+   <li class="nav-item dropdown">
+     <a class="nav-link dropdown-toggle" data-toggle="dropdown" 
+        href="#">Dropdown</a>
+     <div class="dropdown-menu">
+      	<a class="dropdown-item" href="#">Link 1</a>
+      	<a class="dropdown-item" href="#">Link 2</a>
+      	<a class="dropdown-item" href="#">Link 3</a>
+    	</div>
+  	</li>
+  	<li class="nav-item">
+    	<a class="nav-link" href="#">Link</a>
+  	</li>
+  	<li class="nav-item">
+    	<a class="nav-link disabled" href="#">Disabled</a>
+  	</li>
+</ul>
+```
+
+
+
+#### Tabs w/ Dropdown
+
+```html
+<ul class="nav nav-tabs">
+  	<li class="nav-item">
+    	<a class="nav-link active" href="#">Active</a>
+  	</li>
+  	<li class="nav-item dropdown">
+    	<a class="nav-link dropdown-toggle" data-toggle="dropdown" 
+           href="#">Dropdown</a>
+    	<div class="dropdown-menu">
+      		<a class="dropdown-item" href="#">Link 1</a>
+      		<a class="dropdown-item" href="#">Link 2</a>
+      		<a class="dropdown-item" href="#">Link 3</a>
+    	</div>
+  	</li>
+  	<li class="nav-item">
+    	<a class="nav-link" href="#">Link</a>
+  	</li>
+  	<li class="nav-item">
+    	<a class="nav-link disabled" href="#">Disabled</a>
+  	</li>
+</ul>
+```
+
+
+
+#### Toggleable / Dynamic Tabs
+
+To make the tabs toggleable, add the `data-toggle="tab"` attribute to each link. Then add a `.tab-pane` class with a unique ID for every tab and wrap them inside a `<div>` element with class `.tab-content`.
+
+If you want the tabs to fade in and out when clicking on them, add the `.fade` class to `.tab-pane`:
+
+```html
+<!-- Nav tabs -->
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" data-toggle="tab" 
+       href="#home">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#menu1">Menu 1</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#menu2">Menu 2</a>
+  </li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+  <div class="tab-pane container active" id="home">...</div>
+  <div class="tab-pane container fade" id="menu1">...</div>
+  <div class="tab-pane container fade" id="menu2">...</div>
+</div>
+```
+
+
+
+#### Toggleable / Dynamic Pills
+
+The same code applies to pills; only change the attribute `data-toggle="pill"`:
+
+```html
+<!-- Nav pills -->
+<ul class="nav nav-pills">
+  <li class="nav-item">
+    <a class="nav-link active" data-toggle="pill" href="#home">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="pill" href="#menu1">Menu 1</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="pill" href="#menu2">Menu 2</a>
+  </li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+  <div class="tab-pane container active" id="home">...</div>
+  <div class="tab-pane container fade" id="menu1">...</div>
+  <div class="tab-pane container fade" id="menu2">...</div>
+</div>
+```
+
+
+
+## 20. Navigation Bars
+
+A navigation bar is a navigation header that is placed at the top of the page:
+
+![navbar](./imgs/61.png)
+
+![navbar](./imgs/62.png)
+
+
+
+#### Basic Navbar
+
+With Bootstrap, a navigation bar can extend or collapse, depending on the screen size.
+
+A standard navigation bar is created with the `.navbar` class, followed by a responsive collapsing class: `.navbar-expand-xl|lg|md|sm` (stacks the navbar vertically on extra large, large, medium or small screens).
+
+To add links inside the navbar, use a `<ul class="navbar-nav">`. Then add `<li class="nav-item">` elements followed by `<a class="nav-link">` elements.
+
+```html
+<!-- Horizontal navbar that becomes vertical on small screens -->
+<nav class="navbar navbar-expand-sm bg-light">
+  	<ul class="navbar-nav">
+    	<li class="nav-item">
+      		<a class="nav-link" href="#">Link 1</a>
+    	</li>
+    	<li class="nav-item">
+      		<a class="nav-link" href="#">Link 2</a>
+    	</li>
+    	<li class="nav-item">
+      		<a class="nav-link" href="#">Link 3</a>
+    	</li>
+  	</ul>
+</nav>
+```
+
+
+
+#### Vertical Navbar
+
+Remove the `.navbar-expand-xl|lg|md|sm` to create a vertical navigation bar:
+
+```html
+<nav class="navbar bg-light">
+  	<ul class="navbar-nav">
+    	<li class="nav-item">
+      		<a class="nav-link" href="#">Link 1</a>
+    	</li>
+    	<li class="nav-item">
+      		<a class="nav-link" href="#">Link 2</a>
+    	</li>
+    	<li class="nav-item">
+      		<a class="nav-link" href="#">Link 3</a>
+    	</li>
+  	</ul>
+</nav>
+```
+
+
+
+#### Centered Navbar
+
+Add the `.justify-content-center` class to center the navigation bar.
+
+The example will center the navbar, but on small screens it will be displayed vertically and left-aligned (because of the `.navbar-expand-sm class`):
+
+```html
+<nav class="navbar navbar-expand-sm bg-light justify-content-center">
+  ...
+</nav>
+```
+
+
+
+#### Colored Navbar
+
+![colorednavbar](./imgs/63.png)
+
+Use any of the `.bg-color` to change the color (`.bg-primary`, `.bg-success`, `.bg-info`, `.bg-warning`, `.bg-danger`, `.bg-secondary`, `.bg-dark` and `.bg-light`).
+
+**Tip:** Add a **white** text color to all links in the navbar with the `.navbar-dark` class, or use the `.navbar-light` class to add a **black** text color.
+
+```html
+<!-- Grey with black text -->
+<nav class="navbar navbar-expand-sm bg-light navbar-light">
+  	<ul class="navbar-nav">
+    	<li class="nav-item active">
+      		<a class="nav-link" href="#">Active</a>
+    	</li>
+    	<li class="nav-item">
+      		<a class="nav-link" href="#">Link</a>
+    	</li>
+    	<li class="nav-item">
+      		<a class="nav-link" href="#">Link</a>
+    	</li>
+    	<li class="nav-item">
+      		<a class="nav-link disabled" href="#">Disabled</a>
+    	</li>
+  	</ul>
+</nav>
+<!-- Black with white text -->
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">...</nav>
+<!-- Blue with white text -->
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">...</nav>
+```
+
+
+
+> **Active/disabled state**: Add the `.active` class to an `<a>` to highlight the current link, or the `.disabled` class to indicate that the link is un-clickable.
+
+
+
+#### Brand / Logo
+
+The `.navbar-brand` class is used to highlight the brand/logo/project name:
+
+```html
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  	<a class="navbar-brand" href="#"> Logo </a>
+  	...
+</nav>
+```
+
+When using the `.navbar-brand` class on images, Bootstrap 4 will automatically style the image to fit the navbar vertically.
+
+
+
+#### Collapsing The Navigation Bar
+
+Very often, especially on small screens, you want to hide the navigation links and replace them with a button that should reveal them when clicked on.
+
+To create a collapsible navigation bar, use:
+
+```html
+<button class='navbar-toggler' data-toggle='collapse' data-target='#id'>
+```
+
+Then wrap the navbar content (links, etc) inside a div element with `class="collapse navbar-collapse"`, followed by the id of the `data-target`.
+
+```html
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  	<!-- Brand -->
+  	<a class="navbar-brand" href="#">Navbar</a>
+
+  	<!-- Toggler/collapsibe Button -->
+  	<button class="navbar-toggler" type="button" 
+            data-toggle="collapse" data-target="#collapsibleNavbar">
+    	<span class="navbar-toggler-icon"></span>
+  	</button>
+
+  	<!-- Navbar links -->
+  	<div class="collapse navbar-collapse" id="collapsibleNavbar">
+    	<ul class="navbar-nav">
+      		<li class="nav-item">
+        		<a class="nav-link" href="#">Link</a>
+      		</li>
+      		<li class="nav-item">
+        		<a class="nav-link" href="#">Link</a>
+      		</li>
+      		<li class="nav-item">
+        		<a class="nav-link" href="#">Link</a>
+      		</li>
+    	</ul>
+  	</div>
+</nav>
+```
+
+> **Tip:** You can also remove the .navbar-expand-md class to ALWAYS hide navbar links and display the toggler button.
+
+
+
+#### Navbar With Dropdown
+
+Navbars can also hold dropdown menus:
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">  
+    <!-- Brand -->  
+    <a class="navbar-brand" href="#">Logo</a>  
+
+    <!-- Links -->  
+    <ul class="navbar-nav">    
+        <li class="nav-item">      
+            <a class="nav-link" href="#">Link 1</a>    
+        </li>    
+        <li class="nav-item">      
+        	<a class="nav-link" href="#">Link 2</a>    
+        </li>    
+        
+        <!-- Dropdown -->    
+        <li class="nav-item dropdown">      
+            <a class="nav-link dropdown-toggle" href="#" 
+               id="navbardrop" data-toggle="dropdown">        
+                Dropdown link      
+            </a>      
+            <div class="dropdown-menu">        
+                <a class="dropdown-item" href="#">Link 1</a>        
+                <a class="dropdown-item" href="#">Link 2</a>        
+                <a class="dropdown-item" href="#">Link 3</a>      
+            </div>    
+        </li>  
+    </ul>
+</nav>
+
+
+
+#### Navbar Forms and Buttons
+
+Add a `<form class='form-inline'>` to group inputs and buttons side-by-side.
+
+![navbarform](./imgs/64.png)
+
+```html
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  	<form class="form-inline" action="/action_page.php">
+		<input class="form-control mr-sm-2" type="text" 
+               placeholder="Search">
+    	<button class="btn btn-success" type="submit">Search</button>
+  	</form>
+</nav>
+```
+
+You can also use other input classes, such as `.input-group-prepend` or `.input-group-append` to attach an icon or help text next to the input field. You will learn more about these classes in the Bootstrap Inputs chapter.
+
+![65](./imgs/65.png)
+
+
+
+````html
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <form class="form-inline" action="/action_page.php">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">@</span>
+      </div>
+      <input type="text" class="form-control" placeholder="Username">
+    </div>
+  </form>
+</nav>
+````
+
+
+
+#### Navbar Text
+
+Use the `.navbar-text` class to vertical align any elements inside the navbar that are not links (ensures proper padding and text color).
+
+````html
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+<!-- Links -->
+  	<ul class="navbar-nav">
+    	<li class="nav-item">
+      		<a class="nav-link" href="#">Link 1</a>
+    	</li>
+    	<li class="nav-item">
+      		<a class="nav-link" href="#">Link 2</a>
+    	</li>
+  	</ul>
+	<!-- Navbar text-->
+  	<span class="navbar-text">
+    	Navbar text
+  	</span>
+</nav>
+````
+
+
+
+#### Fixed Navigation Bar
+
+The navigation bar can also be fixed at the top or at the bottom of the page.
+
+A fixed navigation bar stays visible in a fixed position (top or bottom) independent of the page scroll.
+
+The `.fixed-top` class makes the navigation bar fixed at the **top**:
+
+````html
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+ ... </nav>
+````
+
+
+
+Use the `.fixed-bottom` class to make the navbar stay at the **bottom** of the page.
+
+````html
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-bottom"> ... </nav>
+````
+
+
+
+Use the `.sticky-top` class to make the navbar fixed/stay at the **top** of the page when you scroll **past** it (will treat it as `position:relative`).
+
+````html
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+  ...
+</nav>
+````
+
+
+
+## 21. Forms
+
+Form controls automatically receive some global styling with Bootstrap:
+
+All textual `<input>`, `<textarea>`, and `<select>` elements with class `.form-control` have a width of 100%
+
+#### Form Layouts
+
+Bootstrap provides two types of form layouts:
+
+- Stacked (full-width) form
+- Inline form
+
+
+
+![forms](./imgs/66.png)
+
+
+
+The following example creates a stacked form with two input fields, one checkbox, and a submit button. Add a wrapper element with `.form-group`, around each form control, to ensure proper margins:
+
+```html
+<form action="/action_page.php">
+  	<div class="form-group">
+    	<label for="email">Email address:</label>
+    	<input type="email" class="form-control" 
+               placeholder="Enter email" id="email">
+  	</div>
+  	<div class="form-group">
+    	<label for="pwd">Password:</label>
+    	<input type="password" class="form-control" 
+               placeholder="Enter password" id="pwd">
+  	</div>
+  	<div class="form-group form-check">
+    	<label class="form-check-label">
+      		<input class="form-check-input" type="checkbox"> 					Remember me
+    	</label>
+  	</div>
+  	<button type="submit" class="btn btn-primary">Submit</button>
+</form>
+```
+
+
+
+#### Inline Form
+
+In an inline form, all of the elements are inline and left-aligned.
+
+**Note: This only applies to forms within viewports that are > 576px wide. On screens <576px, it will stack vertically.**
+
+Additional rule for an inline form:  `<form class="form-inline" >`
+
+````html
+<form class="form-inline" action="/action_page.php">
+  	<label for="email">Email address:</label>
+  	<input type="email" class="form-control" 
+           placeholder="Enter email" id="email">
+  	<label for="pwd">Password:</label>
+  	<input type="password" class="form-control" 
+           placeholder="Enter password" id="pwd">
+  	<div class="form-check">
+    	<label class="form-check-label">
+      		<input class="form-check-input" type="checkbox">
+            Remember me
+    	</label>
+  	</div>
+  	<button type="submit" class="btn btn-primary">Submit</button>
+</form>
+````
+
+
+
+#### Inline Form w/ Utilities
+
+The inline form above feels "compressed", and will look much better with Bootstrap's spacing utilities. The following example adds a right margin (`.mr-sm-2`) to each input on all devices (small and up). And a margin bottom class (`.mb-2`) is used to style the input field when it breaks (goes from horizontal to vertical due to not enough space/width):
+
+`````html
+<form class="form-inline" action="/action_page.php">
+  	<label for="email" class="mr-sm-2">Email address:</label>
+  	<input type="email" class="form-control mb-2 mr-sm-2" 
+           placeholder="Enter email" id="email">
+  	<label for="pwd" class="mr-sm-2">Password:</label>
+  	<input type="password" class="form-control mb-2 mr-sm-2" 
+           placeholder="Enter password" id="pwd">
+  	<div class="form-check mb-2 mr-sm-2">
+    	<label class="form-check-label">
+      	<input class="form-check-input" type="checkbox"> Remember me
+    	</label>
+  	</div>
+  <button type="submit" class="btn btn-primary mb-2">Submit</button>
+</form>
+`````
+
+
+
+> Learn more about spacing in our [Bootstrap 4 Utilities Chapter](https://www.w3schools.com/bootstrap4/bootstrap_utilities.asp).
+
+
+
+#### Form Row/Grid
+
+You can also use columns (`.col`) to control the width and alignment of form inputs without using spacing utilities. Just remember to put them inside a `.row` container.
+
+In the example below, we use two columns that will appear side by side. You will learn much more about columns and rows in the [Bootstrap Grids Chapter](https://www.w3schools.com/bootstrap4/bootstrap_grid_system.asp).
+
+```html
+<form>
+ 	<div class="row">
+  		<div class="col">
+   			<input type="text" class="form-control" id="email" 
+                   placeholder="Enter email" name="email">
+  		</div>
+  		<div class="col">
+   			<input type="password" class="form-control" 
+                   placeholder="Enter password" name="pswd">
+  		</div>
+ 	</div>
+</form>
+```
+
+If you want less grid margins, use `.form-row` instead of `.row`.
+
+
+
+#### Form Validation
+
+You can use different validation classes to provide valuable feedback to users. Add either `.was-validated` or `.needs-validation` to the `<form>` element, depending on whether you want to provide validation feedback before or after submitting the form. The input fields will have a green (valid) or red (invalid) border to indicate what's missing in the form. You can also add a `.valid-feedback` or `.invalid-feedback` message to tell the user explicitly what's missing, or needs to be done before submitting the form.
+
+![formvalid](./imgs/67.png)
+
+Next example uses `.was-validated` to indicate whats missing before submit.
+
+```html
+<form action="/action_page.php" class="was-validated">
+  	<div class="form-group">
+    	<label for="uname">Username:</label>
+    	<input type="text" class="form-control" id="uname" 
+               placeholder="Enter username" name="uname" required>
+    	<div class="valid-feedback">Valid.</div>
+    	<div class="invalid-feedback">Please fill out this field.
+        </div>
+  	</div>
+  	<div class="form-group">
+    	<label for="pwd">Password:</label>
+    	<input type="password" class="form-control" id="pwd" 
+               placeholder="Enter password" name="pswd" required>
+    	<div class="valid-feedback">Valid.</div>
+    	<div class="invalid-feedback">Please fill out this field.
+        </div>
+  	</div>
+  	<div class="form-group form-check">
+    	<label class="form-check-label">
+      		<input class="form-check-input" type="checkbox" 
+                   name="remember" required> I agree on blabla.
+      		<div class="valid-feedback">Valid.</div>
+      		<div class="invalid-feedback">Check this checkbox to 				continue.</div>
+    	</label>
+  	</div>
+  	<button type="submit" class="btn btn-primary">Submit</button>
+</form>
+```
+
+
+
+And now, an example with `.needs-validation`, which will add the validation effect **AFTER** the form has been submitting (if there's anything missing). Note that you will also have to add some jQuery code for this example to work properly:
+
+
+
+````html
+<form action="/action_page.php" class="needs-validation" novalidate>
+  	<div class="form-group">
+    	<label for="uname">Username:</label>
+    	<input type="text" class="form-control" id="uname" 
+               placeholder="Enter username" name="uname" required>
+    	<div class="valid-feedback">Valid.</div>
+    	<div class="invalid-feedback">Please fill out this field.
+        </div>
+  	</div>
+  	<div class="form-group">
+    	<label for="pwd">Password:</label>
+    	<input type="password" class="form-control" id="pwd" 
+               placeholder="Enter password" name="pswd" required>
+    	<div class="valid-feedback">Valid.</div>
+    	<div class="invalid-feedback">Please fill out this field.
+        </div>
+  	</div>
+  	<div class="form-group form-check">
+    	<label class="form-check-label">
+      	<input class="form-check-input" type="checkbox" 
+               name="remember" required> I agree on blabla.
+      	<div class="valid-feedback">Valid.</div>
+      	<div class="invalid-feedback">Check this checkbox to 
+            continue.</div>
+    	</label>
+  	</div>
+  	<button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<script>
+// Disable form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Get the forms we want to add validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>
+````
+
+
+
+## 22. Inputs
+
+Bootstrap supports the following form controls: `input`, `textarea`, `checkbox`, `radio`, `select`.
+
+Also all the HTML5 input types: `text`, `password`, `datetime`, `datetime-local`, `date`, `month`, `time`, `week`, `number`, `email`, `url`, `search`, `tel` and `color`.
+
+> **Note:** Inputs will NOT be fully styled if their type is not properly declared!
+
+The following example contains 2 input:  `type="text"` and `type="password"`. As we mentioned in the Forms chapter, we use the `.form-control` class to style inputs with full-width and proper padding, etc:
+
+````html
+<div class="form-group">
+  	<label for="usr">Name:</label>
+  	<input type="text" class="form-control" id="usr">
+</div>
+<div class="form-group">
+  	<label for="pwd">Password:</label>
+  	<input type="password" class="form-control" id="pwd">
+</div>
+````
+
+
+
+#### Textarea
+
+````html
+<div class="form-group">
+  <label for="comment">Comment:</label>
+  <textarea class="form-control" rows="5" id="comment"></textarea>
+</div>
+````
+
+
+
+#### Checkboxes
+
+Checkboxes are used if you want the user to select any number of options from a list of preset options.
+
+The following example contains three checkboxes. The last option is disabled:
+
+````html
+<div class="form-check">
+	<label class="form-check-label">
+    	<input type="checkbox" class="form-check-input" 
+               value=""> Option 1
+  	</label>
+</div>
+<div class="form-check">
+  	<label class="form-check-label">
+    	<input type="checkbox" class="form-check-input" 
+               value=""> Option 2
+  	</label>
+</div>
+<div class="form-check">
+  	<label class="form-check-label">
+    	<input type="checkbox" class="form-check-input" value="" 
+               disabled> Option 3
+  	</label>
+</div>
+````
+
+Use a wrapper with `.form-check` to ensure margins for labels and checkboxes. Add the `.form-check-label` to labels, and `.form-check-input` to style checkboxes properly inside the `.form-check` container.
+
+
+
+
+
+
+
+#### Inline Checkboxes
+
+Use `.form-check-inline` to display checkboxes on the same line:
+
+````html
+<div class="form-check-inline">
+  	<label class="form-check-label">
+    	<input type="checkbox" class="form-check-input" 
+               value=""> Option 1
+  	</label>
+</div>
+<div class="form-check-inline">
+  	<label class="form-check-label">
+    	<input type="checkbox" class="form-check-input" 
+               value=""> Option 2
+  	</label>
+</div>
+<div class="form-check-inline">
+  	<label class="form-check-label">
+    	<input type="checkbox" class="form-check-input" value="" 
+               disabled> Option 3
+  	</label>
+</div>
+````
+
+
+
+#### Radio Buttons
+
+Used if you want to limit to just one selection from a list of preset options.
+
+````html
+<div class="form-check">
+  	<label class="form-check-label">
+    	<input type="radio" class="form-check-input" 
+               name="optradio"> Option 1
+  	</label>
+</div>
+<div class="form-check">
+  	<label class="form-check-label">
+    	<input type="radio" class="form-check-input" 
+               name="optradio"> Option 2
+  	</label>
+</div>
+<div class="form-check disabled">
+  	<label class="form-check-label">
+    	<input type="radio" class="form-check-input" 
+               name="optradio" disabled> Option 3
+  	</label>
+</div>
+````
 
 
 
